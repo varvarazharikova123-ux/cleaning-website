@@ -1497,7 +1497,7 @@
               <li><span>До 80 м² за один визит</span></li>
               <li><span>Премиум эко-средства</span></li>
               <li><span>1 генеральная уборка в квартал</span></li>
-              <li><span>Мытье окон 2 раза в год</span></li>
+              <li><span>Мытье окон раз в месяц</span></li>
               <li><span>Бесплатная отмена до 24 часов</span></li>
               <li class="excluded"><span>Химчистка мебели</span></li>
             </ul>
@@ -1711,10 +1711,10 @@
   <script>
     // ====== Калькулятор ======
     const rates = {
-      express: 1.6,
-      standard: 2.2,
-      general: 3.0,
-      post: 4.2
+      express: 2.2,
+      standard: 3.0,
+      general: 4.2,
+      post: 5.2
     };
 
     function formatBYN(n){
@@ -1731,10 +1731,10 @@
       const heavy = document.getElementById('optHeavy').checked;
       const urgent = document.getElementById('optUrgent').checked;
 
-      if (windows) k *= 1.15;
-      if (pets) k *= 1.10;
-      if (heavy) k *= 1.20;
-      if (urgent) k *= 1.15;
+      if (windows) k *= 1.20;
+      if (pets) k *= 1.15;
+      if (heavy) k *= 1.25;
+      if (urgent) k *= 1.25;
 
       const base = rates[type] * area;
       const total = Math.round(base * k);
