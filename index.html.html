@@ -1,9 +1,12 @@
+Вот обновлённый HTML-документ с новой ценовой политикой, тарифами и услугами, как вы запросили.
+
+```html
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Чистый дом - больше времени для себя</title>
+    <title>Экспресс-Клининг — Время для себя</title>
     <style>
         * {
             margin: 0;
@@ -11,23 +14,23 @@
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
-        
+
         body {
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: #f4f7fc;
+            color: #1e2f3e;
             overflow-x: hidden;
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Hero Section */
         .hero {
-            height: 100vh;
-            background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.8)), 
+            min-height: 90vh;
+            background: linear-gradient(105deg, rgba(255,255,245,0.85) 0%, rgba(230,245,255,0.8) 100%),
                         url('https://i.pinimg.com/736x/42/69/28/42692807a1ca1d97b51f8591d1c1444a.jpg');
             background-size: cover;
             background-position: center;
@@ -37,27 +40,39 @@
             text-align: center;
             position: relative;
         }
-        
+
         .hero-content h1 {
             font-size: 3.5rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
             line-height: 1.2;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1s ease forwards;
-            color: #2c3e50;
+            color: #1e4663;
         }
-        
+
         .hero-content h1 span {
             display: block;
-            font-size: 2.5rem;
-            color: #8b6b4c;
+            font-size: 2rem;
+            color: #c17b4c;
             margin-top: 0.5rem;
+            font-weight: normal;
         }
-        
+
+        .price-badge {
+            background: rgba(30,70,99,0.85);
+            display: inline-block;
+            padding: 8px 24px;
+            border-radius: 50px;
+            color: white;
+            margin-top: 20px;
+            font-size: 1.1rem;
+            backdrop-filter: blur(4px);
+        }
+
         .start-btn {
             display: inline-block;
-            background-color: #8b6b4c;
+            background-color: #c17b4c;
             color: white;
             padding: 15px 40px;
             border-radius: 50px;
@@ -69,314 +84,507 @@
             transform: translateY(30px);
             animation: fadeInUp 1s ease 0.5s forwards;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(139, 107, 76, 0.3);
+            box-shadow: 0 4px 15px rgba(193, 123, 76, 0.3);
+            border: none;
+            cursor: pointer;
         }
-        
+
         .start-btn:hover {
-            background-color: #74583e;
+            background-color: #9e5f38;
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(139, 107, 76, 0.4);
         }
-        
-        /* Services Section */
-        .services {
+
+        /* Тарифы (подписки) */
+        .subscriptions {
             padding: 80px 0;
-            background-color: white;
+            background: white;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 50px;
             opacity: 0;
             transform: translateY(30px);
         }
-        
+
         .section-title h2 {
             font-size: 2.5rem;
-            color: #2c3e50;
+            color: #1e4663;
             margin-bottom: 15px;
         }
-        
+
         .section-title p {
             font-size: 1.1rem;
-            color: #666;
-            max-width: 600px;
+            color: #4a627a;
+            max-width: 700px;
             margin: 0 auto;
         }
-        
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            background-color: #f8f9fa;
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.3s ease;
-            border-top: 4px solid #8b6b4c;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            color: #8b6b4c;
-        }
-        
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-        
-        .service-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        /* How It Works Section */
-        .how-it-works {
-            padding: 80px 0;
-            background-color: #f8f9fa;
-        }
-        
-        .steps {
+
+        .sub-grid {
             display: flex;
-            justify-content: space-between;
             flex-wrap: wrap;
-            margin-top: 50px;
+            gap: 30px;
+            justify-content: center;
         }
-        
-        .step {
-            flex: 1;
-            min-width: 200px;
+
+        .sub-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: 30px 20px;
             text-align: center;
-            padding: 0 20px;
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.1);
+            flex: 1;
+            min-width: 260px;
+            transition: all 0.25s ease;
+            border: 1px solid #e2edf7;
             opacity: 0;
             transform: translateY(30px);
         }
-        
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background-color: #8b6b4c;
-            color: white;
-            border-radius: 50%;
+
+        .sub-card:hover {
+            transform: translateY(-8px);
+            border-color: #c17b4c;
+        }
+
+        .sub-card h3 {
+            font-size: 1.8rem;
+            color: #1e4663;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #c17b4c;
+            margin: 15px 0;
+        }
+
+        .price small {
+            font-size: 0.9rem;
+            color: #6c8db0;
+        }
+
+        .sub-features {
+            list-style: none;
+            margin: 20px 0;
+            text-align: left;
+            padding-left: 10px;
+        }
+
+        .sub-features li {
+            margin: 12px 0;
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
+            gap: 8px;
+            color: #2c4d6e;
+        }
+
+        .sub-features li:before {
+            content: "✓";
+            color: #c17b4c;
             font-weight: bold;
-            margin: 0 auto 20px;
+            font-size: 1.1rem;
         }
-        
-        .step h3 {
-            font-size: 1.3rem;
-            margin-bottom: 15px;
-            color: #2c3e50;
-        }
-        
-        .step p {
-            color: #666;
-            line-height: 1.6;
-        }
-        
-        /* CTA Section */
-        .cta {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #8b6b4c, #74583e);
+
+        .sub-btn {
+            background: #1e4663;
             color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 40px;
+            font-weight: bold;
+            margin-top: 15px;
+            cursor: pointer;
+            width: 100%;
+            transition: 0.2s;
+        }
+
+        .sub-btn:hover {
+            background: #c17b4c;
+        }
+
+        /* Услуги по типу уборки (цены за м² / комплекс) */
+        .service-types {
+            background: #f8fafd;
+            padding: 70px 0;
+        }
+
+        .price-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .price-item {
+            background: white;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+            transition: all 0.2s;
+            border-bottom: 4px solid #c17b4c;
+        }
+
+        .price-item h4 {
+            font-size: 1.6rem;
+            color: #1e4663;
+        }
+
+        .price-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #c17b4c;
+            margin: 15px 0 5px;
+        }
+
+        .price-number small {
+            font-size: 1rem;
+        }
+
+        /* доп. надбавки и опции */
+        .surcharge-section {
+            background: white;
+            padding: 60px 0;
+        }
+
+        .surcharge-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .surcharge-card {
+            background: #f0f4f9;
+            border-radius: 30px;
+            padding: 20px 25px;
+            flex: 1 1 200px;
+            text-align: center;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .surcharge-card span {
+            font-size: 1.6rem;
+            display: block;
+            color: #1e4663;
+        }
+
+        .surcharge-card .percent {
+            color: #c17b4c;
+            font-size: 1.8rem;
+            margin-top: 8px;
+        }
+
+        .kitchen-note {
+            background: #e9f0f5;
+            border-radius: 40px;
+            padding: 20px;
+            max-width: 500px;
+            margin: 30px auto 0;
             text-align: center;
         }
-        
+
+        .kitchen-note p {
+            font-weight: bold;
+            color: #1e4663;
+        }
+
+        .kitchen-price {
+            font-size: 1.3rem;
+            color: #c17b4c;
+        }
+
+        .cta {
+            background: linear-gradient(125deg, #1e4663, #133146);
+            padding: 70px 0;
+            text-align: center;
+            color: white;
+        }
+
         .cta h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            opacity: 0;
-            transform: translateY(30px);
         }
-        
-        .cta p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        
+
         .cta-btn {
-            display: inline-block;
-            background-color: white;
-            color: #8b6b4c;
-            padding: 15px 40px;
-            border-radius: 50px;
+            background: white;
+            color: #1e4663;
+            padding: 14px 38px;
+            border-radius: 60px;
             text-decoration: none;
-            font-size: 1.2rem;
             font-weight: bold;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.3s ease;
+            font-size: 1.2rem;
+            transition: 0.2s;
+            display: inline-block;
+            margin-top: 15px;
         }
-        
-        .cta-btn:hover {
-            background-color: #f0f0f0;
-            transform: translateY(-3px);
-        }
-        
-        /* Footer */
+
         footer {
-            background-color: #2c3e50;
-            color: white;
-            padding: 40px 0;
+            background: #102b3b;
+            color: #adc6dd;
+            padding: 30px 0;
             text-align: center;
         }
-        
-        /* Animations */
+
         @keyframes fadeInUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-        
-        /* Responsive */
+
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-content h1 span {
-                font-size: 1.8rem;
-            }
-            
-            .steps {
-                flex-direction: column;
-                gap: 40px;
-            }
+            .hero-content h1 { font-size: 2.2rem; }
+            .price-number { font-size: 1.6rem; }
+            .sub-card { min-width: 100%; }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Чистый дом<br><span>больше времени для себя</span></h1>
-                <a href="#services" class="start-btn">START</a>
+
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <h1>Экспресс-Клининг<br><span>чистота, в которую влюбляешься</span></h1>
+            <div class="price-badge">⚡ Профессиональная уборка с прозрачными ценами</div>
+            <a href="#subscriptions" class="start-btn">START</a>
+        </div>
+    </div>
+</section>
+
+<!-- ПОДПИСКИ / ТАРИФЫ -->
+<section class="subscriptions" id="subscriptions">
+    <div class="container">
+        <div class="section-title">
+            <h2>Абонементы на чистоту</h2>
+            <p>Регулярная забота о доме с фиксированной стоимостью и бонусами</p>
+        </div>
+        <div class="sub-grid">
+            <!-- Базовый 250 -->
+            <div class="sub-card">
+                <h3>Базовый</h3>
+                <div class="price">250 ₽<small>/мес</small></div>
+                <ul class="sub-features">
+                    <li>Поддерживающая уборка 1 раз в неделю</li>
+                    <li>Контроль пыли и влажная чистка</li>
+                    <li>Базовый инвентарь включён</li>
+                </ul>
+                <button class="sub-btn">Выбрать абонемент</button>
+            </div>
+            <!-- Комфорт 390 + мытье окон раз в месяц -->
+            <div class="sub-card">
+                <h3>Комфорт</h3>
+                <div class="price">390 ₽<small>/мес</small></div>
+                <ul class="sub-features">
+                    <li>Комплексная уборка 2 раза в неделю</li>
+                    <li><strong>🧼 Мытьё окон раз в месяц</strong></li>
+                    <li>Чистка сантехники + полировка</li>
+                </ul>
+                <button class="sub-btn">Выбрать абонемент</button>
+            </div>
+            <!-- Премиум 550 + химчистка мебели + окна 2 раза -->
+            <div class="sub-card">
+                <h3>Премиум</h3>
+                <div class="price">550 ₽<small>/мес</small></div>
+                <ul class="sub-features">
+                    <li>Ежедневная лёгкая уборка + генерал 2р/нед</li>
+                    <li>🧼 <strong>Химчистка мебели раз в месяц</strong></li>
+                    <li>🪟 <strong>Мытьё окон 2 раза в месяц</strong></li>
+                    <li>Эко-средства премиум-класса</li>
+                </ul>
+                <button class="sub-btn">Выбрать абонемент</button>
             </div>
         </div>
-    </section>
-    
-    <!-- Services Section -->
-    <section class="services" id="services">
-        <div class="container">
-            <div class="section-title">
-                <h2>Наши услуги</h2>
-                <p>Профессиональный клининг для вашего дома и офиса</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">🏠</div>
-                    <h3>Генеральная уборка</h3>
-                    <p>Полная уборка всех помещений с тщательной очисткой труднодоступных мест.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🧹</div>
-                    <h3>Поддерживающая уборка</h3>
-                    <p>Регулярная уборка для поддержания чистоты в вашем доме или офисе.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">🏢</div>
-                    <h3>Уборка после ремонта</h3>
-                    <p>Удаление строительной пыли и мусора после ремонтных работ.</p>
-                </div>
-            </div>
+    </div>
+</section>
+
+<!-- РАЗОВЫЕ УСЛУГИ: цена за квадратный метр / комплекс -->
+<section class="service-types">
+    <div class="container">
+        <div class="section-title">
+            <h2>Разовые уборки</h2>
+            <p>Честные цены за м² — окончательная стоимость фиксируется после оценки</p>
         </div>
-    </section>
-    
-    <!-- How It Works Section -->
-    <section class="how-it-works">
-        <div class="container">
-            <div class="section-title">
-                <h2>Как мы работаем</h2>
-                <p>Простой процесс для вашего удобства</p>
+        <div class="price-list">
+            <div class="price-item">
+                <h4>Экспресс 2,2</h4>
+                <div class="price-number">2.2 ₽<small>/м²</small></div>
+                <p>Быстрая уборка, поддержание порядка</p>
             </div>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h3>Оставьте заявку</h3>
-                    <p>Заполните простую форму на сайте или позвоните нам</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h3>Подтверждение</h3>
-                    <p>Наш менеджер свяжется с вами для уточнения деталей</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h3>Уборка</h3>
-                    <p>Наша команда профессионально выполнит все работы</p>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <h3>Результат</h3>
-                    <p>Вы наслаждаетесь идеальной чистотой в вашем помещении</p>
-                </div>
+            <div class="price-item">
+                <h4>Стандарт 3</h4>
+                <div class="price-number">3 ₽<small>/м²</small></div>
+                <p>Полная влажная + сухая уборка, пылесос</p>
+            </div>
+            <div class="price-item">
+                <h4>Генеральная 4,2</h4>
+                <div class="price-number">4.2 ₽<small>/м²</small></div>
+                <p>Глубокая чистка, мебель, плинтусы, светильники</p>
+            </div>
+            <div class="price-item">
+                <h4>После ремонта 5,2</h4>
+                <div class="price-number">5.2 ₽<small>/м²</small></div>
+                <p>Удаление пыли, цемента, профессиональная технология</p>
             </div>
         </div>
-    </section>
-    
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <h2>Готовы начать?</h2>
-            <p>Закажите уборку прямо сейчас и получите скидку 10% на первый заказ!</p>
-            <a href="#" class="cta-btn">Заказать уборку</a>
+    </div>
+</section>
+
+<!-- ДОПОЛНИТЕЛЬНЫЕ НАЦЕНКИ: шерсть 15%, загрязнения 25%, срочно 25%, окна 20% -->
+<section class="surcharge-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Дополнительные опции</h2>
+            <p>Наценки применяются только при необходимости</p>
         </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>© 2023 Чистый дом. Все права защищены.</p>
+        <div class="surcharge-grid">
+            <div class="surcharge-card">
+                <span>🐾 Шерсть животных</span>
+                <div class="percent">+15%</div>
+                <small>к базовому чеку</small>
+            </div>
+            <div class="surcharge-card">
+                <span>⚠️ Сильные загрязнения</span>
+                <div class="percent">+25%</div>
+                <small>жир, копоть, сложные пятна</small>
+            </div>
+            <div class="surcharge-card">
+                <span>⚡ Срочный выезд</span>
+                <div class="percent">+25%</div>
+                <small>выезд за 2 часа</small>
+            </div>
+            <div class="surcharge-card">
+                <span>🪟 Мытьё окон отдельно</span>
+                <div class="percent">+20%</div>
+                <small>к стоимости уборки</small>
+            </div>
         </div>
-    </footer>
-    
-    <script>
-        // Анимация появления элементов при прокрутке
-        document.addEventListener('DOMContentLoaded', function() {
-            const animatedElements = document.querySelectorAll('.section-title, .service-card, .step, .cta h2, .cta p, .cta-btn');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        // Добавляем задержку для каждого элемента
-                        const index = Array.from(animatedElements).indexOf(entry.target);
-                        setTimeout(() => {
-                            entry.target.style.animation = `fadeInUp 1s ease forwards`;
-                        }, index * 200);
-                        
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            
-            animatedElements.forEach(el => {
-                observer.observe(el);
+
+        <!-- УБОРКА КУХНИ: от 100 до 300 (точная цена после оценки) -->
+        <div class="kitchen-note">
+            <p>🍳 Уборка кухни (интенсив, жир, плита, вытяжка)</p>
+            <div class="kitchen-price">от 100 ₽ до 300 ₽</div>
+            <small style="color:#445f7a;">*Точная цена формируется после бесплатной оценки специалистом</small>
+        </div>
+    </div>
+</section>
+
+<!-- КАЛЬКУЛЯТОР (демо-расчет для демонстрации логики)-->
+<section style="background: #eef3fc; padding: 50px 0;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Пример стоимости уборки</h2>
+            <p>Калькулятор для знакомства с ценами (итог ориентировочный)</p>
+        </div>
+        <div style="background: white; border-radius: 48px; padding: 30px; max-width: 700px; margin: 0 auto;">
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: space-between;">
+                <div style="flex:1">
+                    <label>Площадь (м²):</label>
+                    <input type="number" id="areaInput" value="45" step="5" style="width:100%; padding:12px; border-radius: 40px; border:1px solid #ccc;">
+                </div>
+                <div style="flex:1">
+                    <label>Тип уборки:</label>
+                    <select id="typeSelect" style="width:100%; padding:12px; border-radius: 40px;">
+                        <option value="2.2">Экспресс 2,2 ₽/м²</option>
+                        <option value="3">Стандарт 3 ₽/м²</option>
+                        <option value="4.2">Генеральная 4,2 ₽/м²</option>
+                        <option value="5.2">После ремонта 5,2 ₽/м²</option>
+                    </select>
+                </div>
+            </div>
+            <div style="margin-top: 20px; display: flex; gap: 12px; flex-wrap: wrap;">
+                <label style="display: flex; gap:5px;"><input type="checkbox" id="petCheck"> +15% (шерсть)</label>
+                <label style="display: flex; gap:5px;"><input type="checkbox" id="dirtCheck"> +25% (сильные загрязнения)</label>
+                <label style="display: flex; gap:5px;"><input type="checkbox" id="urgentCheck"> +25% (срочно)</label>
+                <label style="display: flex; gap:5px;"><input type="checkbox" id="windowCheck"> +20% (окна)</label>
+            </div>
+            <div style="margin-top: 25px; background:#1e4663; color:white; padding: 15px; border-radius: 60px; text-align:center; font-size: 1.5rem;">
+                Итого: <span id="totalPrice">0</span> ₽
+            </div>
+            <p style="font-size: 0.8rem; margin-top: 15px; text-align:center;">*Окончательная цена после осмотра, уборка кухни от 100 до 300 ₽ уточняется отдельно</p>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+    <div class="container">
+        <h2>Сделайте свой дом безупречным</h2>
+        <p>Закажите абонемент или разовую уборку. Бесплатный выезд оценщика!</p>
+        <a href="#" class="cta-btn">Получить консультацию</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <p>© 2025 Экспресс-Клининг — Чистый дом, больше времени для себя</p>
+        <p style="margin-top: 8px;">Шерсть +15% | Сильные загрязнения +25% | Срочно +25% | Окна +20% | Уборка кухни: от 100 до 300₽ (по оценке)</p>
+    </div>
+</footer>
+
+<script>
+    // Анимация Intersection Observer
+    document.addEventListener('DOMContentLoaded', function() {
+        const movingItems = document.querySelectorAll('.section-title, .sub-card, .price-item, .surcharge-card, .kitchen-note, .cta h2, .cta p, .cta-btn');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = `fadeInUp 0.8s ease forwards`;
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        movingItems.forEach(el => observer.observe(el));
+
+        // базовый расчет цен (демо калькулятор)
+        function calcTotal() {
+            let area = parseFloat(document.getElementById('areaInput').value);
+            if (isNaN(area) || area < 1) area = 20;
+            let typePrice = parseFloat(document.getElementById('typeSelect').value);
+            let base = area * typePrice;
+
+            let multiplier = 1;
+            if (document.getElementById('petCheck').checked) multiplier += 0.15;
+            if (document.getElementById('dirtCheck').checked) multiplier += 0.25;
+            if (document.getElementById('urgentCheck').checked) multiplier += 0.25;
+            if (document.getElementById('windowCheck').checked) multiplier += 0.20;
+
+            let total = base * multiplier;
+            // Округление
+            total = Math.round(total);
+            document.getElementById('totalPrice').innerText = total;
+        }
+
+        const inputs = ['areaInput', 'typeSelect', 'petCheck', 'dirtCheck', 'urgentCheck', 'windowCheck'];
+        inputs.forEach(id => {
+            const el = document.getElementById(id);
+            if (el) el.addEventListener('input', calcTotal);
+            if (el && el.type === 'checkbox') el.addEventListener('change', calcTotal);
+        });
+        calcTotal();
+
+        // Небольшая имитация кнопок тарифов / услуг (просто алерт)
+        const btns = document.querySelectorAll('.sub-btn, .cta-btn, .start-btn');
+        btns.forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if(btn.classList.contains('sub-btn')) {
+                    e.preventDefault();
+                    alert('Спасибо за интерес! Наш менеджер свяжется для оформления абонемента.\n🎁 Первый месяц со скидкой 10% по промокоду CLEAN10');
+                } else if(btn.classList.contains('cta-btn') && !btn.classList.contains('start-btn')) {
+                    e.preventDefault();
+                    alert('Оставьте заявку на сайте или позвоните +7 (900) 123-45-67. Бесплатная консультация и расчет!');
+                } else if(btn.classList.contains('start-btn')) {
+                    e.preventDefault();
+                    document.querySelector('#subscriptions').scrollIntoView({ behavior: 'smooth' });
+                }
             });
         });
-    </script>
+    });
+</script>
 </body>
 </html>
+```
